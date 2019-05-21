@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+	<title>template</title>
+
+	<style>
+		#main-content{
+			padding: 30px;
+		}
+
+		a{
+			background-color: cornflowerblue;
+			padding: 20px;
+			margin-left: 5px;
+			color: white;
+			font-weight: bold;
+			text-decoration: none;
+		
+		}
+		a:hover{
+			background-color: white;
+			color: cornflowerblue;
+			text-decoration: none;
+			border:  2px solid cornflowerblue;
+		}
+
+		nav{
+			padding: 30px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="main-wrapper">
+
+		<header class="topbar" style="background: rgba(0, 255, 149, 0.562);">
+			header
+		</header>
+
+		<nav>
+			<a href wm-nav="teste.html">veio da havan</a>
+			<a href wm-nav="teste1.html">fallout 76 de graça ainda está caro</a>
+			<a href wm-nav="form.html">formulário</a>
+		</nav>
+
+		<aside class="left-sidebar" style="background: rgb(21, 207, 21); width: 100px;">
+			<div class="scroll-sidebar">
+				<nav class="sidebar-nav">
+					sidebar
+				</nav>
+			</div>
+		</aside>
+
+		<div class="page-wrapper">
+
+			<div id="main-content" class="container-fluid" style="background: cornflowerblue;">
+				main content
+			</div>
+
+			<footer class="footer" style="background: grey;">
+				footer
+			</footer>
+
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+
+	<script>
+		document.querySelectorAll('[wm-nav]').forEach(link => {
+			const conteudo = document.getElementById('main-content')
+			link.onclick = function (e) {
+				e.preventDefault();
+				fetch(link.getAttribute('wm-nav')).then(resp => resp.text())
+					.then(html => conteudo.innerHTML = html)
+			}
+		})
+	</script>
+</body>
+
+</html>

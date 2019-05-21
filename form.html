@@ -1,0 +1,64 @@
+<h1>Formulário</h1>
+
+<form action="http://localhost:3003/usuarios" method="POST">
+
+    <label>
+        Nome:
+        <br>
+        <input type="text" name="nome">
+    </label>
+    <br>
+    <label>
+        senha:
+        <br>
+        <input type="password" name="senha">
+    </label>
+    <br>
+    <label>
+        descrição:
+        <br>
+        <textarea name="desc" id="" cols="30" rows="10"></textarea>
+
+    </label>
+    <br>
+    <div id="radio_id">
+        <input type="radio" name="tipo" value="admin">admin
+        <input type="radio" name="tipo" value="default">default user
+    </div>
+
+    <div>
+        <input type="checkbox" name="ativo"> ativo
+    </div>
+    <div>
+        <select name="estado">
+            <option value="ba">bahia</option>
+            <option value="rj">rio de janeiro</option>
+            <option value="sp">são paulo</option>
+        </select>
+    </div>
+
+    <div>
+<select name="linguagens" multiple size="6">
+    <option value="js">js</option>
+    <option value="java">java</option>
+    <option value="php">php</option>
+    <option value="C++">c++</option>
+    <option value="C#">c#</option>
+    <option value="Asp">Asp</option>
+</select>
+
+    </div>
+
+    <button>incluir</button>
+</form>
+
+<style>
+    form {
+        background-color: white;
+        padding: 30px;
+    }
+
+    #radio_id {
+        margin-bottom: 20px;
+    }
+</style>
